@@ -14,7 +14,7 @@ html, body {
 .stage {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 1000px;
 }
 /*stage ---- end*/
 
@@ -26,6 +26,30 @@ html, body {
   overflow: hidden;
   background-color: #ddd;
   width: 100%;
+
+  @at-root {
+    .img-figure {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      margin: 0;
+      padding: 40px;
+      background-color: #fff;
+      box-sizing:boder-box;
+    }
+
+    figcaption {
+      text-align: center;
+
+      .img-title {
+        margin: 20px 0 0 0;
+        color: #a7a0a2;
+
+        font-size: 16px;
+      }
+    }
+  }
+  
 }
 
 /*image ---- end*/
