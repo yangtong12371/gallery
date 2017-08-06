@@ -1,0 +1,8 @@
+minimist  详细解释
+
+const args = require('minimist')(process.argv.slice(2));  //当我使用运行命令的时候我会在命令后面追加启动的参数，有此来控制运行时期的环境
+
+
+为什么不支持 npm run serve:test ！！！
+
+VCD原则
