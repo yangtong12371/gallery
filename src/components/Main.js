@@ -59,7 +59,7 @@ class AppComponent extends React.Component {
 		}
 	};
 
-	rearrange: function (centerIndex) {
+	rearrange(centerIndex) {
 		var imgsArrangeArr = this.state.imgsArrangeArr,
 			Constant = this.Constant,
 			centerPos = Constant.centerPosition,
@@ -86,14 +86,14 @@ class AppComponent extends React.Component {
 
 			imgsArrangeTopArr = imgsArrangeArr.splice(topImgSpliceIndex, topImgNum);
 
-			imgsArrangeTopArr.forEach(function(value, index)) {
+			imgsArrangeTopArr.forEach(function(value, index){
 				imgsArrangeTopArr[index].pos = {
 					top: getRangeRandom(vPostitionRangeTopY[0],vPostitionRangeTopY[1]),
 					left: getRangeRandom(vPostitionRangeX[0],vPostitionRangeX[1])
 				}
-			};
+			});
 
-			for(var i = 0 , j < imgsArrangeArr.length, k = j/2;i<j;i++) {
+			for(var i = 0, j = imgsArrangeArr.length,k = j/2;i<j;i++) {
 				var h = null;
 				if(i < k) {
 					h = hPositionRangeLeftSecX;
@@ -116,9 +116,9 @@ class AppComponent extends React.Component {
 			this.setState({
 				imgsArrangeArr:imgsArrangeArr
 			});
-	},
+	};
 
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			imgsArrangeArr : [
 				// {
@@ -126,17 +126,17 @@ class AppComponent extends React.Component {
 				// }
 			]
 		}
-	},
+	};
 
 	// 组件加载 随机位置
-	componentDidMount: function() {
+	componentDidMount() {
 		var stageDOM = React.findDOMNode(this.ref.state),
 		stageW = stageDOM.scrollWidth,
 		stageH = stageDOM.scrollHeight,
 		halfStageW = Math.ceil(stageW/2),
 		halfStageH = Math.ceil(stageH/2);
 
-		var imgFigureDOM. = React.findDOMNode(this.ref.imgFigure0),
+		var imgFigureDOM = React.findDOMNode(this.ref.imgFigure0),
 		imgW = imgFigureDOM.scrollWidth,
 		imgH = imgFigureDOM.scrollHeight,
 		halfImgW = Math.ceil(imgW/2),
@@ -163,7 +163,7 @@ class AppComponent extends React.Component {
 		this.vPostitionRange.x[1] = halfImgW;
 
 		this.rearrange(0);
-	},
+	};
 
   render() {
 
@@ -179,7 +179,7 @@ class AppComponent extends React.Component {
   				}
   			}
   		}
-  		imgFigures.push(<ImgFigure data={value} ref={'imgFigure'}+index
+  		imgFigures.push(<ImgFigure data={value} ref={'imgFigure'+index}
   			arrange={this.stata.imgsArrangeArr[index]}/>);
   	}).bind(this);
 
